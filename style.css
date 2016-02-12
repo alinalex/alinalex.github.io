@@ -1,6 +1,17 @@
+h1, h2, h3, h4, h5, h6, p, a, ul, ol, li, small {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  background: transparent; 
+}
+
 body {
 	margin: 0 auto;
 	padding: 0;
+	font-family: 'Quattrocento Sans', sans-serif;
+	font-weight: 400;
 }
 
 .contents {
@@ -14,24 +25,122 @@ body {
 	width: 90%;
 }
 
+.white {
+	color: white;
+}
+
+.dark {
+	color: dark;
+	background-color: white;
+}
+
 #content1 {
-	background-image:url('img/landing/landing.jpg');
+	background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/landing/landing.jpg');
 	background-repeat:no-repeat;
 	background-size:cover;
 	background-position:center center;
 }
 
 #content2 {
-	background-color: white;
+	
 }
 
 #content3 {
-	background-image:url('img/past/past.jpg');
+	background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url('img/past/past.jpg');
 	background-repeat:no-repeat;
 	background-size:cover;
 	background-position:center center;
 }
 
 #content4 {
-	background-color: white;
+	
 }
+
+#content5 {
+	background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/future/future.jpeg');
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:center center;
+}
+
+#content6 {
+	
+}
+
+#content7 {
+	background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/interests/interests5.jpeg');
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:center center;
+}
+
+#content8 {
+	
+}
+
+#content9 {
+	background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/why-me/why-me3.jpg');
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:center center;
+}
+
+#content10 {
+	
+}
+
+nav {
+	width: 80%;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	position: absolute;
+	top: 30px;
+	text-align: center;
+}
+
+nav a {
+	padding: 5px 10px;
+  	width: 100%;
+  	color: white;
+  	text-align: center;
+  	text-transform: uppercase;
+  	font-size: 12px;
+  	line-height: 12x;
+  	letter-spacing: 1px;
+  	cursor: pointer; 
+}
+
+nav a,
+nav a:focus,
+nav a:visited,
+nav a:hover,
+nav a:active {
+  text-decoration: none;
+  color: white;
+}
+
+nav a:hover {
+	border-radius: 50px;
+	background: rgba(0,0,0,0.45);
+	transition-property: background;
+    transition-duration: 0.2s;
+    transition-timing-function: initial;
+    transition-delay: initial;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
