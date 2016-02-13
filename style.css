@@ -90,12 +90,8 @@ body {
 }
 
 nav {
-	width: 80%;
-	margin: 0 auto;
-	left: 0;
-	right: 0;
-	position: absolute;
-	top: 30px;
+	width: 100%;
+	align-self: center;
 	text-align: center;
 }
 
@@ -129,9 +125,69 @@ nav a:hover {
     transition-delay: initial;
 }
 
+#nav {
+	display: flex;
+  	justify-content: center;
+	height: 10%;
+	width: 80%;
+	margin: 0 auto;
+	
+}
 
+#wrapper {
+	width: 60%;
+	margin: 0 auto;
+	height: 80%;
+	display: flex;
+}
 
+#profilePic {
+	width: 200px;
+	height: 200px;
+	border-radius: 100px;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+	background: url('img/landing/me.jpg') no-repeat;
+	align-self: center;
+}
 
+#more {
+	margin: 0 auto;
+	height: 10%;
+	width: 10%;
+	display: flex;
+}
+
+#link10 {
+	background-image: url('img/landing/more.png');
+	background-repeat: no-repeat;
+	background-position: bottom;
+	width: 100%;
+	height: 50%;
+	align-self: center;
+	color: white;
+  	text-align: center;
+  	text-transform: uppercase;
+  	font-size: 12px;
+  	line-height: 12x;
+  	letter-spacing: 1px;
+  	cursor: pointer; 
+  	transition: all 0.3s ease;
+}
+
+#link10,
+#link10:focus,
+#link10:visited,
+#link10:hover,
+#link10:active {
+  text-decoration: none;
+  color: white;
+}
+
+#link10:hover {
+	padding: 10px 0px;
+	height: 60%;
+}
 
 
 
