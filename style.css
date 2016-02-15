@@ -4,7 +4,7 @@
 	display: table;
 }
 * {
-	-webkit-font-smoothing: antialiased; 
+	-webkit-font-smoothing: antialiased!important; 
 }
 
 html {
@@ -109,9 +109,9 @@ nav a:hover {
 	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
 }
 
-.title {
-	padding-top: 50px;
-	font-size: 36px;
+.landing-title {
+	padding-top: 3.125rem;
+	font-size: 2.25rem;
 }
 
 .more {
@@ -134,33 +134,113 @@ nav a:hover {
 	padding: 5px 0px;
 }
 
+.title {
+	font-size: 2.25rem;
+	margin-top: 80px;
+	margin-bottom: 80px;
+}
+
+.content {
+	font-size: 1.25rem;
+	line-height: 140%;
+	text-align: justify;
+	margin-bottom: 80px;
+}
+
+#past {
+	background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/past/past.jpg');
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:center center;
+	text-align: center;
+}
+
+/*
+.experience {
+	float: left;
+}
+*/
+
+#future {
+	background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/future/future.jpeg');
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:center center;
+	text-align: center;
+}
+
+
+
+#interests {
+	background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/interests/interests5.jpeg');
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:center center;
+	text-align: center;	
+}
+
+
+
+#why-me {
+	background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/why-me/why-me3.jpg');
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:center center;
+	text-align: center;	
+}
+
+
+
 @media (max-width: 640px) {
+
   .small-centered {
     float: none!important;
   }
+
   .landing-copy div {
   	text-align: center;
   }
+
   .landing-copy {
 	margin-top: 90px;
-	}	
+	}
+
   .rounded {
-	width: 120px;
-	height: 120px;
-	border-radius: 60px;
-	-webkit-border-radius: 60px;
-	-moz-border-radius: 60px;
-	background: url('img/landing/me.jpg') no-repeat;
+	width: 130px;
+	height: 130px;
+	border-radius: 65px;
+	-webkit-border-radius: 65px;
+	-moz-border-radius: 65px;
+	background: url('img/landing/me-phone.jpg') no-repeat;
 	box-shadow: 0 0 8px rgba(0, 0, 0, .8);
 	-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
 	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	margin: 0 auto;
 	}
+
 	.column, .columns {
 		padding: 0;
 	}
-	.more {
-	margin-top: 120px;
+
+	.more, .chevron {
+	display: none;
 	}
+
+	.title {
+	font-size: 1.5rem;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	}
+
+	.content {
+	font-size: 1rem;
+	margin-bottom: 50px;	
+	}
+
+	.experience {
+	float: none;
+	}
+
 }
 
 

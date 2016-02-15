@@ -2,35 +2,35 @@ $(document).ready(function (){
             $("#link1").click(function (){
                 event.preventDefault();
                 $('html, body').animate({
-                    scrollTop: $("#content2").offset().top
+                    scrollTop: $("#bio").offset().top
                 }, 1250);
             });
 
             $("#link2").click(function (){
                 event.preventDefault();
                 $('html, body').animate({
-                    scrollTop: $("#content3").offset().top
+                    scrollTop: $("#past").offset().top
                 }, 1250);
             });
 
             $("#link3").click(function (){
                 event.preventDefault();
                 $('html, body').animate({
-                    scrollTop: $("#content4").offset().top
+                    scrollTop: $("#present").offset().top
                 }, 1250);
             });
 
             $("#link4").click(function (){
                 event.preventDefault();
                 $('html, body').animate({
-                    scrollTop: $("#content5").offset().top
+                    scrollTop: $("#future").offset().top
                 }, 1250);
             });
 
             $("#link5").click(function (){
                 event.preventDefault();
                 $('html, body').animate({
-                    scrollTop: $("#content6").offset().top
+                    scrollTop: $("#basecamp").offset().top
                 }, 1250);
             });
 
@@ -44,28 +44,28 @@ $(document).ready(function (){
             $("#link7").click(function (){
                 event.preventDefault();
                 $('html, body').animate({
-                    scrollTop: $("#content8").offset().top
+                    scrollTop: $("#interests").offset().top
                 }, 1250);
             });
 
             $("#link8").click(function (){
                 event.preventDefault();
                 $('html, body').animate({
-                    scrollTop: $("#content9").offset().top
+                    scrollTop: $("#why-me").offset().top
                 }, 1250);
             });
 
             $("#link9").click(function (){
                 event.preventDefault();
                 $('html, body').animate({
-                    scrollTop: $("#content10").offset().top
+                    scrollTop: $("#contact").offset().top
                 }, 1250);
             });
 
-            $("#link10").click(function (){
+            $("#more").click(function (){
                 event.preventDefault();
                 $('html, body').animate({
-                    scrollTop: $("#content2").offset().top
+                    scrollTop: $("#bio").offset().top
                 }, 1250);
             });
 
