@@ -1,0 +1,684 @@
+/*
+
+Author: Alin Rauta
+Description: _
+Version: 1.0
+
+/* -------------------------------------------------------------- 
+  BASICS
+-------------------------------------------------------------- */
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  background: #ffffff;
+  font-family: 'Roboto', sans-serif;
+}
+#page {
+  z-index: 4;
+  position: relative;
+  opacity: 0;
+  margin: 30px 0 0 0;
+  background: #ffffff;
+  transition:all 1s ease 1s;
+  -webkit-transition:all 1s ease 1s;
+  -moz-transition:all 1s ease 1s;
+  -o-transition:all 1s ease 1s;
+}
+#page.displayed {
+  opacity: 1;
+  margin: 0;
+}
+
+/* -------------------------------------------------------------- 
+  REPETITIVE CLASSES
+-------------------------------------------------------------- */
+figure {
+  margin: 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+.clear {
+  clear: both;
+}
+.hide {
+  display: none;
+}
+.wrapper {
+  width: 1024px;
+  margin: 0 auto;
+}
+.wrapper::after,
+.large-wrapper::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.large-wrapper {
+  width: 1120px;
+  margin: 0 auto;
+}
+.main-wrap {
+  padding: 0 0 40px 0;
+}
+
+
+
+/* -------------------------------------------------------------- 
+  TYPOGRAPHY
+-------------------------------------------------------------- */
+p {
+  color: #666666;
+  margin: 10px 0 23px 0;
+  font-size: 16px;
+  line-height: 180%;
+}
+p.medium {
+  font-size: 18px;
+  line-height: 160%;
+  color: #333333;
+  text-align: center;
+  height: 56px;
+}
+p.big {
+  font-size: 32px;
+  line-height: 140%;
+  margin: 5px 0 40px 0;
+  color: #2D97E2;
+}
+a {
+  outline: none;
+  text-decoration: none;
+  color: #888888;
+  position: relative;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+a:hover {
+  opacity: 0.7;
+}
+h4 {
+  font-weight: bold;
+  margin-top: 0;
+  bottom: 20px;
+  color: #333333;
+  text-align: center;
+}
+
+/* -------------------------------------------------------------- 
+  LOADER
+-------------------------------------------------------------- */
+#loader {
+  position: fixed;
+  text-align: center;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  margin: -60px 0 0 -150px;
+  transition:all ease 1.5s;
+  -webkit-transition:all ease 1.5s;
+  -moz-transition:all ease 1.5s;
+  -o-transition:all ease 1.5s;
+}
+#loader img {
+  opacity: 0.9;
+  width: 40px;
+  height: auto;
+  display: inline-block;
+}
+#loader.removed {
+  opacity: 0;
+  margin: -120px 0 0 -150px;
+}
+p.loader {
+  text-align: center;
+}
+
+/* -------------------------------------------------------------- 
+  BACK TO TOP
+-------------------------------------------------------------- */
+#backtotop {
+  position: fixed;
+  cursor: pointer;
+  bottom: 30px;
+  right: 30px;
+  font-size: 22px;
+  color: #666666;
+  opacity: 0;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  line-height: 40px;
+  opacity: 0.5;
+  transition:opacity ease 0.4s;
+  -webkit-transition:opacity ease 0.4s;
+  -moz-transition:opacity ease 0.4s;
+  -o-transition:opacity ease 0.4s;
+}
+#backtotop:hover {
+  opacity: 1;
+}
+
+/* -------------------------------------------------------------- 
+  PACE
+-------------------------------------------------------------- */
+.pace {
+  -webkit-pointer-events: none;
+  pointer-events: none;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.pace.pace-inactive .pace-progress {
+  display: none;
+}
+
+.pace .pace-progress {
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  right: 0;
+  height: 5rem;
+  width: 5rem;
+
+  -webkit-transform: translate3d(0, 0, 0) !important;
+  -ms-transform: translate3d(0, 0, 0) !important;
+  transform: translate3d(0, 0, 0) !important;
+}
+
+.pace .pace-progress:after {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: .5rem;
+  content: attr(data-progress-text);
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: 100;
+  font-size: 5rem;
+  line-height: 1;
+  text-align: right;
+  color: rgba(45, 151, 226, 0.49999999999999996);
+}
+
+
+/* -------------------------------------------------------------- 
+  HEADER
+-------------------------------------------------------------- */
+header {
+  width: 100%;
+  height: auto;
+  padding: 60px 0;
+}
+
+/* TOP RIGHT SITE NAV */
+.site-nav {
+  height: 30px;
+  margin: 5px 0;
+  float: right;
+  position: relative;
+}
+.site-nav a {
+  height: 30px;
+  display: inline-block;
+  margin: 0 0 0 30px;
+  line-height: 30px;
+  color: #999999;
+  font-size: 17px;
+  transition:all ease 0.6s;
+  -webkit-transition:all ease 0.6s;
+  -moz-transition:all ease 0.6s;
+  -o-transition:all ease 0.6s;
+}
+
+/* TOP LEFT SITE INFOS */
+.site-infos {
+  height: 40px;
+  float: left;
+  position: relative;
+}
+.site-infos h1.site-name {
+  font-size: 17px;
+  margin: 0;
+  height: 40px;
+  line-height: 40px;
+  color: #333333;
+  display: none;
+}
+.site-infos .logo {
+  height: 40px;
+  display: block;
+  width: auto;
+  float: left;
+}
+
+
+/* -------------------------------------------------------------- 
+  INTRO
+-------------------------------------------------------------- */
+section.intro {
+  padding: 60px 0 80px 0;
+}
+.logo {
+  display: inline-block;
+  margin: 0 0 20px 0;
+  width: 50px;
+}
+.headline {
+  font-size: 3em;
+  height: 60px;
+  line-height: 150%;
+  color: #2D97E2;
+  margin: 0 0 40px 0;
+}
+
+/* -------------------------------------------------------------- 
+  PROJECTS
+-------------------------------------------------------------- */
+section.projects {
+  background: #ffffff;
+}
+figure {
+  position: relative;
+}
+figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+figure figcaption {
+  display: block;
+  position: relative;
+  text-align: center;
+  opacity: 1;
+  margin: 30px 6%;
+  width: 88%;
+  background: #fff;
+  padding: 0;
+  height: auto;
+  color: #888888;
+  font-size: 13px;
+}
+section.projects .half-width-1 {
+  float: left;
+  width: 49%;
+  height: auto;
+  margin: 0;
+}
+section.projects .half-width-2 {
+  float: left;
+  width: 49%;
+  height: auto;
+  margin: 0 0 0 2%;
+}
+section.projects .full-width {
+  float: left;
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+section.projects .wrapper {
+  border-bottom: 1px solid #E8E8E8;
+  padding-bottom: 40px;
+}
+
+/* -------------------------------------------------------------- 
+  ABOUT
+-------------------------------------------------------------- */
+section.about {
+  padding: 60px 0 80px 0;
+}
+.left-col {
+  float: left;
+  width: 40%;
+  padding: 0 80px 0 0;
+}
+.right-col {
+  float: left;
+  width: 60%;
+  padding: 0;
+}
+
+section.about .wrapper {
+  border-bottom: 1px solid #E8E8E8;
+  padding-bottom: 40px;
+}
+
+/* -------------------------------------------------------------- 
+  BASECAMP
+-------------------------------------------------------------- */
+section.basecamp {
+  padding: 0 0 80px 0;
+}
+
+.third-col {
+  float: left;
+  width: 33.33%;
+}
+
+.third-col.first {
+  padding: 0 40px 0 0;
+}
+
+.third-col.middle {
+  padding: 0 20px;
+}
+
+.third-col.last {
+  padding: 0 0 0 40px;
+}
+
+section.basecamp .wrapper {
+  border-bottom: 1px solid #E8E8E8;
+  padding-bottom: 40px;
+}
+
+/* -------------------------------------------------------------- 
+  PROJECTS
+-------------------------------------------------------------- */
+
+section.projects {
+  padding: 0 0 80px 0;
+}
+
+/* -------------------------------------------------------------- 
+  CONTACT
+-------------------------------------------------------------- */
+section.contact .wrapper{
+  border-bottom: 1px solid #E8E8E8;
+  padding-bottom: 40px;
+}
+
+img.client {
+  width: 20%;
+  float: left;
+  margin: 40px 0 0 0;
+}
+
+ul.social {
+  text-align: center;
+  padding: 0;
+  margin-top: 60px;
+}
+
+ul.social a {
+  font-size: 50px;
+  border: 2px solid;
+  margin: 0 30px 0 0;
+  float: left;
+}
+
+.fa {
+  padding: 0 20px;
+}
+
+a.twitter:hover {
+  color: #ffffff;
+  background: #5EA9DD;
+}
+
+a.linkedin:hover {
+  color: #ffffff;
+  background: #006699;
+}
+
+a.medium:hover {
+  color: #ffffff;
+  background: #00AB6C;
+}
+
+a.github:hover {
+  color: #ffffff;
+  background: #323131;
+}
+
+a.codepen:hover {
+  color: #ffffff;
+  background: #1B1C1B;
+}
+/* -------------------------------------------------------------- 
+  FOOTER
+-------------------------------------------------------------- */
+footer {
+  padding: 0;
+}
+.footer-col {
+  width: 25%;
+  padding: 0 20px 0 0;
+  float: left;
+}
+
+
+
+
+/* -------------------------------------------------------------- 
+  RESPONSIVE / SCREEN UNDER 1200PX
+-------------------------------------------------------------- */
+@media screen and (max-width: 1200px) {
+  .large-wrapper {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+/* -------------------------------------------------------------- 
+  RESPONSIVE / SCREEN UNDER 900PX
+-------------------------------------------------------------- */
+@media screen and (max-width: 900px) {
+  #page {
+    margin: 0;
+  }
+  #backtotop {
+    display: none;
+  }
+  p.loader {
+  text-align: center;
+  }
+  p {
+    margin: 5px 0 13px 0;
+    font-size: 15px;
+    line-height: 170%;
+  }
+  p.medium {
+    height: 100%;
+    margin: 15px 0;
+    height: 56px;
+  }
+  p.big {
+    margin: 5px 0 20px 0;
+    font-size: 27px;
+  }
+  figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  header {
+    padding: 20px 0;
+  }
+  section.about {
+    padding: 10px 0 20px 0;
+  }
+  section.basecamp {
+    padding: 10px 0 20px 0;
+  }
+  section.projects {
+    padding: 10px 0 20px 0;
+  }
+  .wrapper {
+    width: 92%;
+    margin: 0 4%;
+  }
+  .site-infos h1.site-name {
+    font-size: 15px;
+  }
+  .left-col {
+    float: left;
+    width: 35%;
+    padding: 0 50px 10px 0;
+  }
+  .right-col {
+    float: left;
+    width: 65%;
+    padding: 0;
+  }
+  .third-col {
+    float: left;
+    width: 33.33%;
+  }
+  .third-col.first {
+    padding: 0 30px 0 0;
+  }
+  .third-col.middle {
+    padding: 0 15px;
+  }
+  .third-col.last {
+    padding: 0 0 0 30px;
+  }
+  .headline {
+    font-size: 2.25em;
+    width: 100%;
+  }
+  .site-nav a {
+    margin: 0 0 0 15px;
+    font-size: 15px;
+  }
+  section.intro {
+    padding: 20px 0;
+  }
+  .main-wrap {
+    padding: 0 0 20px 0;
+  }
+  footer {
+    padding: 0 0 30px 0;
+    text-align: left;
+  }
+  section.projects .half-width-1 {
+    width: 100%;
+    margin: 0;
+  }
+  section.projects .half-width-2 {
+    width: 100%;
+    margin: 0;
+  }
+  h4 {
+    font-size: 18px;
+  }
+}
+
+
+
+
+/* -------------------------------------------------------------- 
+  RESPONSIVE / SCREEN UNDER 600PX
+-------------------------------------------------------------- */
+@media screen and (max-width: 600px) {
+  #page {
+    margin: 0;
+  }
+  #backtotop {
+    display: none;
+  }
+  p.loader {
+  text-align: center;
+  }
+  p {
+    margin: 5px 0 13px 0;
+    font-size: 14px;
+    line-height: 170%;
+  }
+  p.medium {
+    height: 100%;
+    margin: 15px 0;
+  }
+  p.big {
+    margin: 5px 0 20px 0;
+    font-size: 22px;
+  }
+  figure img {
+    width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  header {
+    padding: 20px 0;
+  }
+  section.about {
+    padding: 10px 0 20px 0;
+  }
+  section.basecamp {
+    padding: 10px 0 20px 0;
+  }
+  section.projects {
+    padding: 10px 0 20px 0;
+  }
+  .wrapper {
+    width: 88%;
+    margin: 0 6%;
+  }
+  .left-col {
+    float: left;
+    width: 100%;
+    padding: 0 0 20px 0;
+  }
+  .site-infos h1.site-name {
+    font-size: 15px;
+  }
+  .right-col {
+    float: left;
+    width: 100%;
+    padding: 0;
+  }
+  .third-col {
+    float: left;
+    width: 100%;
+  }
+  .third-col.first, .third-col.middle, .third-col.last {
+    padding: 0 0 20px 0;
+  }
+  .headline {
+    font-size: 1.5em;
+    width: 100%;
+  }
+  .site-nav a {
+    margin: 0 0 0 15px;
+    font-size: 15px;
+  }
+  section.intro {
+    padding: 20px 0;
+  }
+  .main-wrap {
+    padding: 0 0 20px 0;
+  }
+  footer {
+    padding: 0 0 30px 0;
+    text-align: left;
+  }
+  section.projects .half-width-1 {
+    width: 100%;
+    margin: 0;
+  }
+  section.projects .half-width-2 {
+    width: 100%;
+    margin: 0;
+  }
+  ul.social a {
+    font-size: 50px;
+    border: 2px solid;
+    margin-bottom: 10px;
+  }
+  ul.social {
+    display: grid;
+  }
+  h4 {
+    font-size: 15px;
+  }
+}
